@@ -1,0 +1,202 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App-header {
+  padding: 2rem 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.App-header p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.App-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.weather-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.refresh-button {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.refresh-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading {
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  background: rgba(255, 107, 107, 0.2);
+  border: 1px solid rgba(255, 107, 107, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.error-message p {
+  margin: 0.5rem 0;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.weather-grid h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.date {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #f8f9fa;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.celsius {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.fahrenheit {
+  font-size: 1rem;
+  opacity: 0.8;
+  color: #e9ecef;
+}
+
+.no-data {
+  padding: 2rem;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.api-info {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.api-info h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.api-info p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.api-info strong {
+  color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .App-main {
+    padding: 0 1rem;
+  }
+  
+  .weather-container {
+    padding: 1.5rem;
+  }
+  
+  .weather-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .celsius {
+    font-size: 2rem;
+  }
+}
+
+/* Animation für das Laden */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
